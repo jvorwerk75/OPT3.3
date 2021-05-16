@@ -5,14 +5,12 @@ public class ApplicantInfo {
     private String officeLocation;
     private Boolean oldOGDWorker;
     private Boolean acceptedOffer = false;
-    private Person person;
     private Boolean fulltime;
 
-    public ApplicantInfo(Integer yearsExperience, String officeLocation, Boolean oldOGDWorker, Person person, Boolean fulltime){
+    public ApplicantInfo(Integer yearsExperience, String officeLocation, Boolean oldOGDWorker, Boolean fulltime){
         this.yearsExperience = yearsExperience;
         this.officeLocation = officeLocation;
         this.oldOGDWorker = oldOGDWorker;
-        this.person = person;
         this.fulltime = fulltime;
     }
     public void setYearsExperience(Integer yearsExperience){this.yearsExperience = yearsExperience;}

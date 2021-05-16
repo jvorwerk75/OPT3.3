@@ -38,14 +38,15 @@ public class Person {
     public String getGeslacht(){return this.geslacht;}
     public String getIban(){return this.iban;}
     public String getBsn(){return this.bsn;}
+    public Salary getSalary(){return this.salary;}
 
     public Salary createSalary(){
         Double amount;
         if(applicantInfo.getYearsExperience() < 4){
             amount = 2275.00;
-        }else if(applicantInfo.getYearsExperience() > 3 && applicantInfo.getYearsExperience() < 11){
+        }else if(applicantInfo.getYearsExperience() > 3 && applicantInfo.getYearsExperience() < 10){
             amount = 2500.00;
-        }else if(applicantInfo.getYearsExperience() > 10){
+        }else if(applicantInfo.getYearsExperience() >= 10){
             amount = 3000.00;
         }else{
             amount = null;
