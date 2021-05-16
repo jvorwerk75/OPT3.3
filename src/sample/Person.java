@@ -25,6 +25,7 @@ public class Person {
     public void setBirthdate(String birthdate){this.birthdate = birthdate;}
     public void setGeslacht(String geslacht){this.geslacht = geslacht;}
     public void setIban(String iban){this.iban = iban;}
+    public void setBSN(String bsn){this.bsn = bsn;}
     public String getFullName(){return this.firstName + " " + this.middleName + " " + this.lastName;}
     public String getFirstName(){return this.firstName;}
     public String getMiddleName(){return this.middleName;}
@@ -32,6 +33,7 @@ public class Person {
     public String getBirthdate(){return this.birthdate;}
     public String getGeslacht(){return this.geslacht;}
     public String getIban(){return this.iban;}
+    public String getBsn(){return this.bsn;}
 
 
 }
