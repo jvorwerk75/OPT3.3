@@ -1,5 +1,7 @@
 package sample;
 
+import java.util.Scanner;
+
 public class Person {
     private String firstName;
     private String lastName;
@@ -10,6 +12,9 @@ public class Person {
     private String bsn;
     private Salary salary;
     private ApplicantInfo applicantInfo;
+    private Contract contract;
+    private ContractPrinter contractPrinter;
+
 
     public Person(String firstName, String middleName, String lastName, String birthdate, String gender, String iban, String bsn, ApplicantInfo applicantInfo){
         this.firstName = firstName;
@@ -53,6 +58,40 @@ public class Person {
         }
         Salary salary = new Salary(applicantInfo.getFulltime(),amount);
         return salary;
+    }
+    public void makeContract(Person person){
+        System.out.println("Weet u zeker dat u een contract wilt maken voor " + getFullName() + "? (j/n)");
+        Scanner scanner = new Scanner(System.in);
+        String answer = scanner.nextLine();
+        if(answer.equals("j")){
+            System.out.println("Wat voor een contract gaat het worden?\r\n" +
+                    "1. Vast contract met bepaalde tijd,\r\n" +
+                    "2. Vast contract met onbepaalde tijd, \r\n" +
+                    "3. Voorovereenkomst (voor parttimers).");
+             determineContract(scanner.nextInt(), person);
+        }
+        if(answer.equals("n")){
+            System.out.println("Contract maken afgebroken.");
+        }
+        if(answer.isEmpty()){
+            System.out.println("Probeer het nog eens");
+            makeContract(person);
+        }
+    }
+    public void printContract(){
+        contractPrinter = new ContractPrinter(contract);
+    }
+    public void determineContract(int choice, Person person){
+        if(choice == 1){
+            contract =  new ContractDetermined(person);
+        }else if(choice == 2){
+            contract = new ContractNotDetermined(person);
+        }else if(choice == 3){
+            contract = new ContractParttimer(person);
+        }else{
+            System.out.println("probeer het opnieuw!");
+            makeContract(person);
+        }
     }
 
 

@@ -9,14 +9,14 @@ public class ContractApplication {
     }
 
     //Hierin wordt gecontroleerd of de contract aanvraag compleet is voordat hij opgestuurd mag worden.
-    private void completeCheck(){
+    public void completeCheck(){
         if(recordCheck() && salaryCheck()){
-            //TODO aanvraag is compleet en mag opgestuurd worden
+            record.getPerson().makeContract(record.getPerson());
         }else{
             //TODO aanvraag is niet compleet en moet nog compleet gemaakt worden
         }
     }
-    private boolean recordCheck(){
+    public boolean recordCheck(){
         record.completeRecordCheck();
         if(record.getComplete()){
             return true;
@@ -26,7 +26,12 @@ public class ContractApplication {
             return false;
         }
     }
-    private Boolean salaryCheck(){
+
+    public void makeContract(){
+        record.getPerson().makeContract(record.getPerson());
+    }
+
+    public Boolean salaryCheck(){
         if(this.salary.getSalarySort().isEmpty()){
             return false;
         }

@@ -30,7 +30,7 @@ public class Record {
         if (person.getBirthdate().isEmpty()) {
             return false;
         }
-        if (person.getGeslacht().isEmpty()) {
+        if (person.getGender().isEmpty()) {
             return false;
         }
         if (person.getIban().isEmpty()) {
