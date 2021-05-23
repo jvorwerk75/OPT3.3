@@ -13,25 +13,26 @@ public class Function {
     public String getFunctionExplained(){return functionExplained;}
     public void makeFunction(){
         System.out.println("Wat wordt de naam van de functie? (ICT=1/Account manager=2/HR medewerker=3/sales=4/Administratief medewerker=5/overig=6/parttimer=7)");
-        if(scanner.nextInt() == 1){
+        int antwoord = scanner.nextInt();
+        if(antwoord == 1){
             ICTfunction();
         }
-        else if(scanner.nextInt() == 2){
+        else if(antwoord == 2){
             AMfunction();
         }
-        else if(scanner.nextInt() == 3){
+        else if(antwoord == 3){
             HRFunction();
         }
-        else if(scanner.nextInt() == 4){
+        else if(antwoord == 4){
             salesFunction();
         }
-        else if(scanner.nextInt() == 5){
+        else if(antwoord == 5){
             administrationFunction();
         }
-        else if(scanner.nextInt() == 6){
+        else if(antwoord == 6){
             overigFunction();
         }
-        else if(scanner.nextInt() == 7){
+        else if(antwoord == 7){
             parttimeFunction();
         }
     }

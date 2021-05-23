@@ -13,7 +13,7 @@ public class ContractApplication {
         if(recordCheck() && salaryCheck()){
             record.getPerson().makeContract(record.getPerson());
         }else{
-            //TODO aanvraag is niet compleet en moet nog compleet gemaakt worden
+            System.out.println("Er missen nog gegevens in de aanvraag.");
         }
     }
     public boolean recordCheck(){

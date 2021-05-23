@@ -13,14 +13,15 @@ public class Logging {
     private static Logging singleton;
     private File logFile;;
 
-    private String getFormattedDateAndTime(){
-        return LocalDate.now() + LocalDateTime.now().format(DateTimeFormatter.ofPattern("hh:mm:ss"));
-    }
     private String getFormattedDate(){
+        return LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+    }
+    private String getFormattedDateAndTime(){
         return getFormattedDate() + LocalDateTime.now().format(DateTimeFormatter.ofPattern("hh:mm:ss"));
     }
+
     private Logging(){
-        logFile = new File ("src\\sample\\redources\\Logging\\" + getFormattedDate() +".log");
+        logFile = new File ("src\\sample\\resources\\Logging\\" + getFormattedDate() +".log");
     }
     public static Logging getInstance(){
         if(singleton == null){

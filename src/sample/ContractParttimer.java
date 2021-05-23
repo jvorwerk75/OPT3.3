@@ -4,13 +4,13 @@ public class ContractParttimer extends Contract {
 
     public ContractParttimer(Person person){
         super(person);
-        makeStandardContractConditions();
+        makePartTimeContractCondition();
 
     }
     public String makeBeginText(){
         return "Hierbij bevestigen wij dat je met ingang van " + startDate + " je dienstverband zult voortzetten in de functie van " + function.getFunctionName() +  " op basis van een dienstverband voor onbepaalde tijd.\r\n";
     }
-    public String makeTimeCondition(){
+    public String makeTimeConditions(){
         return "Wij plaatsen jou per " + startDate + " op een lijst van personen met wie wij een soortgelijk contract hebben\r\n" +
                 "afgesloten. We laten je op deze lijst staan totdat je aangeeft niet meer beschikbaar te zijn. Zolang je op deze\r\n" +
                 "lijst staat kunnen wij je benaderen voor projecten. Als we je meerdere malen niet kunnen bereiken of we\r\n" +

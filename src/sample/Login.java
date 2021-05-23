@@ -1,6 +1,7 @@
 package sample;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Login {
     private static Login singeleton;
@@ -29,6 +30,14 @@ public class Login {
         }
         return false;
     }
+    private User getUser(String email){
+        for(User user: users){
+            if(user.getUserName().equals(email)){
+                return user;
+            }
+        }
+        return null;
+    }
     public Boolean userIsAuthenticated(){
         return loggedInUser != null;
     }
@@ -37,9 +46,29 @@ public class Login {
             return true;
         }
         else{
-            //TODO Log in methode.
+            Scanner scanner = new Scanner(System.in);
+            Logging logging = Logging.getInstance();
 
+            for(int i = 0; i < 3; i++){
+                System.out.println("LOG IN");
+                System.out.println("Met welke E-mail wilt u inloggen? ");
+                String email = scanner.nextLine();
+                System.out.println("Wat is het bijbehorden wachtwoord? ");
+                String password = scanner.nextLine();
 
+                User user = getUser(email);
+
+                if(user != null && user.passwordAuthentication(password)){
+                    this.loggedInUser = user;
+                    logging.printLog("gebruiker is ingelogd");
+                    System.out.println("");
+                    return true;
+                }
+                System.out.println("De combinatie van email en wachtwoord zijn niet correct. ");
+                logging.printLog(String.format("Het is gebruiker met email '%s' niet gelukt om in te loggen", email));
+            }
+            System.out.println("=============");
+            System.out.println("");
             return false;
         }
     }

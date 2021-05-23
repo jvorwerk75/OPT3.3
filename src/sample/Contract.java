@@ -16,9 +16,14 @@ public class Contract {
     public Contract(Person person){
         this.person = person;
     }
-    public void makeStandardContractConditions(){
-        contractPercentage();
+    public void makePartTimeContractCondition(){
         startDate();
+        User();
+        makeFunction();
+    }
+    public void makeStandardContractConditions(){
+        startDate();
+        contractPercentage();
         probation();
         //LBV();
         User();
