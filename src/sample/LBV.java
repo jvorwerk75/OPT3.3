@@ -1,9 +1,12 @@
 package sample;
 
+import java.util.Scanner;
+
 public class LBV {
-    private Boolean accepted;
+    private Boolean needed;
 
-    public LBV(){
-
+    public LBV(Boolean needed){
+        this.needed = needed;
     }
+    public Boolean getNeeded(){return needed;}
 }

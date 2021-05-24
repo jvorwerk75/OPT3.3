@@ -8,70 +8,68 @@ public class Contract {
     protected String startDate;
     private LBV lbv;
     private Person person;
-    private String user;
     protected Function function;
     private ContractPrinter contractPrinter;
-    Scanner scanner  = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
 
-    public Contract(Person person){
+    public Contract(Person person) {
         this.person = person;
     }
-    public void makePartTimeContractCondition(){
+
+    public void makePartTimeContractCondition() {
         startDate();
-        User();
         makeFunction();
     }
-    public void makeStandardContractConditions(){
+
+    public void makeStandardContractConditions() {
         startDate();
         contractPercentage();
         probation();
-        //LBV();
-        User();
+        LBV();
         makeFunction();
     }
-    public void makeFunction(){
+
+    public void makeFunction() {
         this.function = new Function();
     }
-    public String makeBeginText() {
+
+    public String makeTimeConditions() {
         return "";
     }
-    public String makeTimeConditions(){
-        return "";
-    }
-    public void contractPercentage(){
+
+    public void contractPercentage() {
         System.out.println("Hoeveel uur gaat de persoon werken per week? (24 t/m 40)");
         this.contractPercentage = scanner.nextInt();
     }
-    public void probation(){
+
+    public void probation() {
         System.out.println("Hoeveel maanden krijgt de persoon proeftijd? (1 t/m 2)");
         this.probation = scanner.nextInt();
     }
-    public void startDate(){
+
+    public void startDate() {
         System.out.println("wanneer gaat de persoon beginnen? (dd/mm/yyyy)");
-        Scanner scanner1 = new Scanner(System.in);
-        this.startDate = scanner1.nextLine();
+        this.startDate = scanner.nextLine();
     }
-    public void LBV(){
-        System.out.println("heeft de persoon een LBV nodig? (j/n)");
-        if(scanner.nextLine().equals("j")){
-            this.lbv = new LBV();
-        }
-        if(scanner.nextLine().equals("n")){
-            return;
-        }
-        System.out.println("Probeer het opnieuw");
-        LBV();
-    }
-    public void User(){
-        System.out.println("Wat is uw volledige naam? ");
+
+    public void LBV() {
+        System.out.println("Wilt de persoon een LBV formulier? (j/n)");
         Scanner scanner2 = new Scanner(System.in);
-        this.user = scanner2.nextLine();
+        String answer = scanner2.nextLine();
+        if (answer.equals("j")) {
+            this.lbv = new LBV(true );
+        } else if (answer.equals("n")) {
+            this.lbv = new LBV(false);
+        } else {
+            System.out.println("U kunt alleen met 'j' of 'n' antwoorden. \r\n Probeer het nog eens! ");
+            LBV();
+        }
     }
 
-
-
-
-
-
-
+    public String makeBeginText() {
+        return "Dit zijn de details van het contract voor " + person.getFullName() + ". \r\n==============================\r\nDit contract is aangemaakt door: " + Login.getInstance().getUsername();
+    }
+    public Person getPerson(){return this.person;}
+    public Integer getContractPercentage(){return this.contractPercentage;}
+    public LBV getLbv(){return this.lbv;}
 }
