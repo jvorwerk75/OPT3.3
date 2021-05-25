@@ -1,37 +1,75 @@
 import org.junit.jupiter.api.Test;
 import sample.ApplicantInfo;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ApplicantInfoTest {
+    ArrayList<Boolean> applicationInfo = new ArrayList<>();
+    public void addToApplicationInfo(){
+        applicationInfo.add(true);
+        applicationInfo.add(true);
+        applicationInfo.add(true);
+        applicationInfo.add(true);
+    }
+    public void setAllTrue(){
+        for(int i = 0; i < applicationInfo.size(); i++) {
+            applicationInfo.set(i, true);
+        }
+    }
+
+    // application(0) = oldOGDWorker, application(1) = fulltime, application(2) = goodMotivation, application(3) = CompletedStudy
+
     @Test
     void pairwiseTestCase1(){
-        ApplicantInfo applicantInfo = new ApplicantInfo(2, null,true,true,true, false);
+        addToApplicationInfo();
+        setAllTrue();
+        applicationInfo.set(3, false);
+        ApplicantInfo applicantInfo = new ApplicantInfo(2, applicationInfo);
         assertTrue(applicantInfo.applicantSuitedForJob());
     }
     @Test
     void pairwiseTestCase2(){
-        ApplicantInfo applicantInfo = new ApplicantInfo(2, null,false,true,false, true);
+        addToApplicationInfo();
+        setAllTrue();
+        applicationInfo.set(0, false);
+        applicationInfo.set(2, false);
+        ApplicantInfo applicantInfo = new ApplicantInfo(2, applicationInfo);
         assertFalse(applicantInfo.applicantSuitedForJob());
     }
     @Test
     void pairwiseTestCase3(){
-        ApplicantInfo applicantInfo = new ApplicantInfo(7, null,false,true,true, true);
+        addToApplicationInfo();
+        setAllTrue();
+        applicationInfo.set(0, false);
+        ApplicantInfo applicantInfo = new ApplicantInfo(2, applicationInfo);
         assertTrue(applicantInfo.applicantSuitedForJob());
     }
     @Test
     void pairwiseTestCase4(){
-        ApplicantInfo applicantInfo = new ApplicantInfo(7, null,true,true,false, false);
+        addToApplicationInfo();
+        setAllTrue();
+        applicationInfo.set(2, false);
+        applicationInfo.set(3, false);
+        ApplicantInfo applicantInfo = new ApplicantInfo(7, applicationInfo);
         assertTrue(applicantInfo.applicantSuitedForJob());
     }
     @Test
     void pairwiseTestCase5(){
-        ApplicantInfo applicantInfo = new ApplicantInfo(10, null,true,true,true, true);
+        addToApplicationInfo();
+        setAllTrue();
+        ApplicantInfo applicantInfo = new ApplicantInfo(10, applicationInfo);
         assertTrue(applicantInfo.applicantSuitedForJob());
     }
     @Test
     void pairwiseTestCase6(){
-        ApplicantInfo applicantInfo = new ApplicantInfo(10, null,false,true,false, false);
+        addToApplicationInfo();
+        setAllTrue();
+        applicationInfo.set(0, false);
+        applicationInfo.set(2, false);
+        applicationInfo.set(3, false);
+        ApplicantInfo applicantInfo = new ApplicantInfo(10, applicationInfo);
         assertFalse(applicantInfo.applicantSuitedForJob());
     }
 }

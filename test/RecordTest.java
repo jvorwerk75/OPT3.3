@@ -3,17 +3,37 @@ import org.junit.jupiter.api.Test;
 import sample.Person;
 import sample.Record;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class RecordTest {
 
     // condition coverage
     // elke voorwaarden wordt op true en false getest
-
+    String firstName = "Jasper";
+    String middleName = "Yvo Manfred";
+    String lastName = "Vorwerk";
+    String birthDate = "20-3-1998";
+    String gender = "man";
+    String iban = "NLV9RABO0123456789";
+    String bsn = "12345678";
+    ArrayList<String> info1 = new ArrayList<String>();
+    public void addToArray(){
+        info1.add(firstName);
+        info1.add(middleName);
+        info1.add(lastName);
+        info1.add(birthDate);
+        info1.add(gender);
+        info1.add(iban);
+        info1.add(bsn);
+    }
     @Test
     void conditionCoverage1(){
-        Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk"
-                , "20-3-1998", "Man", "NLV9RABO0123456789", "12345678", null);
+        this.iban = "NLV9RABO0123456789";
+        this.bsn = "12345678";
+        addToArray();
+        Person person = new Person(info1, null);
         Record record = new Record(person);
         //A
         assertFalse(numberCount(record.getPerson().getBsn()) == 9);
@@ -26,8 +46,10 @@ class RecordTest {
     }
     @Test
     void conditionCoverage2(){
-        Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk"
-                , "20-3-1998", "Man", "N19RABO0123456789", "12345678", null);
+        this.iban = "L19RABO0123456789";
+        this.bsn = "12345678";
+        addToArray();
+        Person person = new Person(info1, null);
         Record record = new Record(person);
         //A
         assertFalse(numberCount(record.getPerson().getBsn()) == 9);
@@ -40,8 +62,10 @@ class RecordTest {
     }
     @Test
     void conditionCoverage3(){
-        Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk"
-                , "20-3-1998", "Man", "NL9RABO0123456789", "123456789", null);
+        this.iban = "NL9RABO0123456789";
+        this.bsn = "123456789";
+        addToArray();
+        Person person = new Person(info1, null);
         Record record = new Record(person);
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
@@ -58,8 +82,10 @@ class RecordTest {
 
     @Test
     void decisionCoverage1(){
-        Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk"
-                , "20-3-1998", "Man", "NLV9RABO0123456789", "123456789", null);
+        this.iban = "NLV9RABO0123456789";
+        this.bsn = "123456789";
+        addToArray();
+        Person person = new Person(info1, null);
         Record record = new Record(person);
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
@@ -72,8 +98,10 @@ class RecordTest {
     }
     @Test
     void decisionCoverage2(){
-        Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk"
-                , "20-3-1998", "Man", "NL19RABO0123456789", "123456789", null);
+        this.iban = "NL19RABO0123456789";
+        this.bsn = "123456789";
+        addToArray();
+        Person person = new Person(info1, null);
         Record record = new Record(person);
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
@@ -90,8 +118,10 @@ class RecordTest {
 
     @Test
     void conditionDecisionCoverage1(){
-        Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk"
-                , "20-3-1998", "Man", "NL19RABO012345789", "12345689", null);
+        this.iban = "NL9RABO0123456789";
+        this.bsn = "12345678";
+        addToArray();
+        Person person = new Person(info1, null);
         Record record = new Record(person);
         //A
         assertFalse(numberCount(record.getPerson().getBsn()) == 9);
@@ -104,8 +134,10 @@ class RecordTest {
     }
     @Test
     void conditionDecisionCoverage2(){
-        Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk"
-                , "20-3-1998", "Man", "NL19RABO0123456789", "123456789", null);
+        this.iban = "NL19RABO0123456789";
+        this.bsn = "123456789";
+        addToArray();
+        Person person = new Person(info1, null);
         Record record = new Record(person);
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
@@ -122,8 +154,10 @@ class RecordTest {
 
     @Test
     void modifiedConditionDecisionCoverage1(){
-        Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk"
-                , "20-3-1998", "Man", "NL19RABO0123456789", "123456789", null);
+        this.iban = "NL19RABO0123456789";
+        this.bsn = "123456789";
+        addToArray();
+        Person person = new Person(info1, null);
         Record record = new Record(person);
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
@@ -136,8 +170,10 @@ class RecordTest {
     }
     @Test
     void modifiedConditionDecisionCoverage2(){
-        Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk"
-                , "20-3-1998", "Man", "NL19RABO0123456789", "12345678", null);
+        this.iban = "NL19RABO0123456789";
+        this.bsn = "12345678";
+        addToArray();
+        Person person = new Person(info1, null);
         Record record = new Record(person);
         //A
         assertFalse(numberCount(record.getPerson().getBsn()) == 9);
@@ -150,8 +186,10 @@ class RecordTest {
     }
     @Test
     void modifiedConditionDecisionCoverage3(){
-        Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk"
-                , "20-3-1998", "Man", "NLV9RABO0123456789", "123456789", null);
+        this.iban = "NLV9RABO0123456789";
+        this.bsn = "123456789";
+        addToArray();
+        Person person = new Person(info1, null);
         Record record = new Record(person);
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
@@ -164,8 +202,10 @@ class RecordTest {
     }
     @Test
     void modifiedConditionDecisionCoverage4(){
-        Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk"
-                , "20-3-1998", "Man", "N19RABO0123456789", "123456789", null);
+        this.iban = "L19RABO0123456789";
+        this.bsn = "123456789";
+        addToArray();
+        Person person = new Person(info1, null);
         Record record = new Record(person);
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
@@ -182,8 +222,10 @@ class RecordTest {
 
     @Test
     void multipleConditionCoverage1(){
-        Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk"
-                , "20-3-1998", "Man", "NL19RABO012346789", "12345689", null);
+        this.iban = "NL9RABO0123456789";
+        this.bsn = "12345678";
+        addToArray();
+        Person person = new Person(info1, null);
         Record record = new Record(person);
         //A
         assertFalse(numberCount(record.getPerson().getBsn()) == 9);
@@ -196,8 +238,10 @@ class RecordTest {
     }
     @Test
     void multipleConditionCoverage2(){
-        Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk"
-                , "20-3-1998", "Man", "NLV9RABO0123456789", "12345689", null);
+        this.iban = "NLV9RABO0123456789";
+        this.bsn = "12345678";
+        addToArray();
+        Person person = new Person(info1, null);
         Record record = new Record(person);
         //A
         assertFalse(numberCount(record.getPerson().getBsn()) == 9);
@@ -210,8 +254,10 @@ class RecordTest {
     }
     @Test
     void multipleConditionCoverage3(){
-        Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk"
-                , "20-3-1998", "Man", "NL19ABO0123456789", "12345678", null);
+        this.iban = "N19RABO0123456789";
+        this.bsn = "12345678";
+        addToArray();
+        Person person = new Person(info1, null);
         Record record = new Record(person);
         //A
         assertFalse(numberCount(record.getPerson().getBsn()) == 9);
@@ -224,8 +270,10 @@ class RecordTest {
     }
     @Test
     void multipleConditionCoverage4(){
-        Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk"
-                , "20-3-1998", "Man", "NL19RABO0123456789", "12345678", null);
+        this.iban = "NL19RABO0123456789";
+        this.bsn = "12345678";
+        addToArray();
+        Person person = new Person(info1, null);
         Record record = new Record(person);
         //A
         assertFalse(numberCount(record.getPerson().getBsn()) == 9);
@@ -238,8 +286,10 @@ class RecordTest {
     }
     @Test
     void multipleConditionCoverage5(){
-        Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk"
-                , "20-3-1998", "Man", "NL9RABO0123456789", "123456789", null);
+        this.iban = "NL9RABO0123456789";
+        this.bsn = "123456789";
+        addToArray();
+        Person person = new Person(info1, null);
         Record record = new Record(person);
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
@@ -252,8 +302,10 @@ class RecordTest {
     }
     @Test
     void multipleConditionCoverage6(){
-        Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk"
-                , "20-3-1998", "Man", "NLV9RABO0123456789", "123456789", null);
+        this.iban = "NLV9RABO0123456789";
+        this.bsn = "123456789";
+        addToArray();
+        Person person = new Person(info1, null);
         Record record = new Record(person);
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
@@ -266,8 +318,10 @@ class RecordTest {
     }
     @Test
     void multipleConditionCoverage7(){
-        Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk"
-                , "20-3-1998", "Man", "L19RABO0123456789", "123456789", null);
+        this.iban = "L19RABO0123456789";
+        this.bsn = "123456789";
+        addToArray();
+        Person person = new Person(info1, null);
         Record record = new Record(person);
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
@@ -280,8 +334,10 @@ class RecordTest {
     }
     @Test
     void multipleConditionCoverage8(){
-        Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk"
-                , "20-3-1998", "Man", "NL19RABO0123456789", "123456789", null);
+        this.iban = "NL19RABO0123456789";
+        this.bsn = "123456789";
+        addToArray();
+        Person person = new Person(info1, null);
         Record record = new Record(person);
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
