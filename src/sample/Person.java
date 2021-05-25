@@ -1,5 +1,7 @@
 package sample;
 
+import Contracts.*;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,19 +16,6 @@ public class Person {
     private Salary salary;
     private ApplicantInfo applicantInfo;
     private Contract contract;
-
-
-    /*public Person(String firstName, String middleName, String lastName, String birthdate, String gender, String iban, String bsn, ApplicantInfo applicantInfo){
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
-        this.birthdate = birthdate;
-        this.gender = gender;
-        this.iban = iban;
-        this.bsn = bsn;
-        this.applicantInfo = applicantInfo;
-        this.salary = createSalary();
-    }*/
     public Person(ArrayList<String> info, ApplicantInfo applicantInfo){
         this.firstName = info.get(0);
         this.middleName = info.get(1);
@@ -40,13 +29,6 @@ public class Person {
 
     }
 
-    public void setLastName(String lastName){this.lastName = lastName;}
-    public void setFirstName(String firstName){this.firstName = firstName;}
-    public void setMiddleName(String middleName){this.middleName = middleName;}
-    public void setBirthdate(String birthdate){this.birthdate = birthdate;}
-    public void setGender(String gender){this.gender = gender;}
-    public void setIban(String iban){this.iban = iban;}
-    public void setBSN(String bsn){this.bsn = bsn;}
     public String getFullName(){return this.firstName + " " + this.middleName + " " + this.lastName;}
     public String getFirstName(){return this.firstName;}
     public String getMiddleName(){return this.middleName;}
