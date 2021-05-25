@@ -15,71 +15,88 @@ class SalaryTest {
     String gender = "man";
     String iban = "NLV9RABO0123456789";
     String bsn = "12345678";
-    ArrayList<String> info1 = new ArrayList<String>();
-    public void addToArray(){
-        info1.add(firstName);
-        info1.add(middleName);
-        info1.add(lastName);
-        info1.add(birthDate);
-        info1.add(gender);
-        info1.add(iban);
-        info1.add(bsn);
+
+    ArrayList<String> personInfoList = new ArrayList<String>();
+    public void addToPersonArray(){
+        personInfoList.add(firstName);
+        personInfoList.add(middleName);
+        personInfoList.add(lastName);
+        personInfoList.add(birthDate);
+        personInfoList.add(gender);
+        personInfoList.add(iban);
+        personInfoList.add(bsn);
+    }
+    ArrayList<Boolean> applicationInfoList = new ArrayList<>();
+    public void addToApplicationInfoList(){
+        applicationInfoList.add(null);
+        applicationInfoList.add(true);
+        applicationInfoList.add(null);
+        applicationInfoList.add(null);
+
     }
     //Test of de equivalentieklasen en randwaarden kloppen bij het bepalen van het salaris
     @Test
     void salaryClass1Test1(){
-        ApplicantInfo applicantInfo = new ApplicantInfo(0, null,null,true, null, null);
-        addToArray();
-        Person person = new Person(info1, applicantInfo);
+        addToApplicationInfoList();
+        ApplicantInfo applicantInfo = new ApplicantInfo(0, applicationInfoList);
+        addToPersonArray();
+        Person person = new Person(personInfoList, applicantInfo);
         assertTrue(person.getSalary().getAmount() == 2275.00);
     }
     @Test
     void salaryClass1Test2(){
-        ApplicantInfo applicantInfo = new ApplicantInfo(2, null,null,true,null, null);
-        addToArray();
-        Person person = new Person(info1, applicantInfo);
+        addToApplicationInfoList();
+        ApplicantInfo applicantInfo = new ApplicantInfo(2, applicationInfoList);
+        addToPersonArray();
+        Person person = new Person(personInfoList, applicantInfo);
         assertTrue(person.getSalary().getAmount() == 2275.00);
     }
     @Test
     void salaryClass1Test3(){
-        ApplicantInfo applicantInfo = new ApplicantInfo(3, null,null,true, null, null);
-        addToArray();
-        Person person = new Person(info1, applicantInfo);
+        addToApplicationInfoList();
+        ApplicantInfo applicantInfo = new ApplicantInfo(3, applicationInfoList);
+        addToPersonArray();
+        Person person = new Person(personInfoList, applicantInfo);
         assertTrue(person.getSalary().getAmount() == 2275.00);
     }
     @Test
     void salaryClass2Test1(){
-        ApplicantInfo applicantInfo = new ApplicantInfo(4, null,null,true,null ,null );
-        addToArray();
-        Person person = new Person(info1, applicantInfo);
+        addToApplicationInfoList();
+        ApplicantInfo applicantInfo = new ApplicantInfo(4, applicationInfoList);
+        addToPersonArray();
+        Person person = new Person(personInfoList, applicantInfo);
         assertTrue(person.getSalary().getAmount() == 2500.00);
     }
     @Test
     void salaryClass2Test2(){
-        ApplicantInfo applicantInfo = new ApplicantInfo(7, null,null,true,null, null);
-        addToArray();
-        Person person = new Person(info1, applicantInfo);
+        addToApplicationInfoList();
+        ApplicantInfo applicantInfo = new ApplicantInfo(7, applicationInfoList);
+        addToPersonArray();
+        Person person = new Person(personInfoList, applicantInfo);
         assertTrue(person.getSalary().getAmount() == 2500.00);
     }
     @Test
     void salaryClass2Test3(){
-        ApplicantInfo applicantInfo = new ApplicantInfo(9, null,null,true,null, null);
-        addToArray();
-        Person person = new Person(info1, applicantInfo);
+        addToApplicationInfoList();
+        ApplicantInfo applicantInfo = new ApplicantInfo(9, applicationInfoList);
+        addToPersonArray();
+        Person person = new Person(personInfoList, applicantInfo);
         assertTrue(person.getSalary().getAmount() == 2500.00);
     }
     @Test
     void salaryClass3Test1(){
-        ApplicantInfo applicantInfo = new ApplicantInfo(10, null,null,true,null, null);
-        addToArray();
-        Person person = new Person(info1, applicantInfo);
+        addToApplicationInfoList();
+        ApplicantInfo applicantInfo = new ApplicantInfo(10, applicationInfoList);
+        addToPersonArray();
+        Person person = new Person(personInfoList, applicantInfo);
         assertTrue(person.getSalary().getAmount() == 3000.00);
     }
     @Test
     void salaryClass3Test2(){
-        ApplicantInfo applicantInfo = new ApplicantInfo(17, null,null,true,null,null);
-        addToArray();
-        Person person = new Person(info1, applicantInfo);
+        addToApplicationInfoList();
+        ApplicantInfo applicantInfo = new ApplicantInfo(17, applicationInfoList);
+        addToPersonArray();
+        Person person = new Person(personInfoList, applicantInfo);
         assertTrue(person.getSalary().getAmount() == 3000.00);
     }
 }

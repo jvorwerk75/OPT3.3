@@ -16,16 +16,21 @@ public class Main extends Application {
         if(Login.getInstance().isAuthenticated()){
             Boolean nogeenkeer = true;
             while (nogeenkeer) {
-                ApplicantInfo applicant = new ApplicantInfo(1, null, false, true, true, true);
-                ArrayList<String> info = new ArrayList<String>();
-                info.add("Jasper");
-                info.add("Yvo Manfred");
-                info.add("Vorwerk");
-                info.add("20-03-1998)");
-                info.add("man");
-                info.add("NL00INGB1234567890");
-                info.add("123456789");
-                Person person = new Person(info, applicant);
+                ArrayList<Boolean>  applicationInfoList = new ArrayList<>();
+                applicationInfoList.add(false);
+                applicationInfoList.add(true);
+                applicationInfoList.add(true);
+                applicationInfoList.add(true);
+                ApplicantInfo applicant = new ApplicantInfo(1, applicationInfoList);
+                ArrayList<String> personInfo = new ArrayList<String>();
+                personInfo.add("Jasper");
+                personInfo.add("Yvo Manfred");
+                personInfo.add("Vorwerk");
+                personInfo.add("20-03-1998)");
+                personInfo.add("man");
+                personInfo.add("NL00INGB1234567890");
+                personInfo.add("123456789");
+                Person person = new Person(personInfo, applicant);
                 Record record = new Record(person);
                 ContractApplication contractApplication = new ContractApplication(record, person.getSalary());
                 contractApplication.makeContract();
