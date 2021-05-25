@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main extends Application {
@@ -15,8 +16,21 @@ public class Main extends Application {
         if(Login.getInstance().isAuthenticated()){
             Boolean nogeenkeer = true;
             while (nogeenkeer) {
-                ApplicantInfo applicant = new ApplicantInfo(1, null, false, true, true, true);
-                Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk", "20-3-1998", "man", "NL00INGB1234567890", "123456789", applicant);
+                ArrayList<Boolean>  applicationInfoList = new ArrayList<>();
+                applicationInfoList.add(false);
+                applicationInfoList.add(true);
+                applicationInfoList.add(true);
+                applicationInfoList.add(true);
+                ApplicantInfo applicant = new ApplicantInfo(1, applicationInfoList);
+                ArrayList<String> personInfo = new ArrayList<String>();
+                personInfo.add("Jasper");
+                personInfo.add("Yvo Manfred");
+                personInfo.add("Vorwerk");
+                personInfo.add("20-03-1998)");
+                personInfo.add("man");
+                personInfo.add("NL00INGB1234567890");
+                personInfo.add("123456789");
+                Person person = new Person(personInfo, applicant);
                 Record record = new Record(person);
                 ContractApplication contractApplication = new ContractApplication(record, person.getSalary());
                 contractApplication.makeContract();
