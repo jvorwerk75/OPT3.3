@@ -11,7 +11,7 @@ public class Login {
     private Login(){
         users = new ArrayList<> ();
         users.add(new User ("a", "b"));
-        users.add(new User ("a", "b"));
+        users.add(new User ("c", "d"));
         loggedInUser = null;
     }
 
