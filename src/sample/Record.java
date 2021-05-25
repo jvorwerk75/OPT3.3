@@ -21,10 +21,6 @@ public class Record {
     }
     public Person getPerson(){return this.person;}
     public Boolean getComplete(){return this.complete;}
-    public void setPerson(Person person) {
-        this.person = person;
-    }
-
     //check persoongegevens compleet zijn. Hierin zijn niet vereiste attributen weggelaten
     public Boolean completeRecordCheck() {
         if (person.getBirthdate().isEmpty()) {
