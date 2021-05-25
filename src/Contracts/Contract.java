@@ -1,4 +1,6 @@
-package sample;
+package Contracts;
+
+import sample.*;
 
 import java.util.Scanner;
 
