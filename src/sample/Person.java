@@ -1,5 +1,6 @@
 package sample;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Person {
@@ -16,7 +17,7 @@ public class Person {
     private ContractPrinter contractPrinter;
 
 
-    public Person(String firstName, String middleName, String lastName, String birthdate, String gender, String iban, String bsn, ApplicantInfo applicantInfo){
+    /*public Person(String firstName, String middleName, String lastName, String birthdate, String gender, String iban, String bsn, ApplicantInfo applicantInfo){
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
@@ -26,6 +27,18 @@ public class Person {
         this.bsn = bsn;
         this.applicantInfo = applicantInfo;
         this.salary = createSalary();
+    }*/
+    public Person(ArrayList<String> info, ApplicantInfo applicantInfo){
+        this.firstName = info.get(0);
+        this.middleName = info.get(1);
+        this.lastName = info.get(2);
+        this.birthdate = info.get(3);
+        this.gender = info.get(4);
+        this.iban = info.get(5);
+        this.bsn = info.get(6);
+        this.applicantInfo = applicantInfo;
+        this.salary = createSalary();
+
     }
 
     public void setLastName(String lastName){this.lastName = lastName;}

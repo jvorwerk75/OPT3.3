@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main extends Application {
@@ -16,7 +17,15 @@ public class Main extends Application {
             Boolean nogeenkeer = true;
             while (nogeenkeer) {
                 ApplicantInfo applicant = new ApplicantInfo(1, null, false, true, true, true);
-                Person person = new Person("Jasper", "Yvo Manfred", "Vorwerk", "20-3-1998", "man", "NL00INGB1234567890", "123456789", applicant);
+                ArrayList<String> info = new ArrayList<String>();
+                info.add("Jasper");
+                info.add("Yvo Manfred");
+                info.add("Vorwerk");
+                info.add("20-03-1998)");
+                info.add("man");
+                info.add("NL00INGB1234567890");
+                info.add("123456789");
+                Person person = new Person(info, applicant);
                 Record record = new Record(person);
                 ContractApplication contractApplication = new ContractApplication(record, person.getSalary());
                 contractApplication.makeContract();
