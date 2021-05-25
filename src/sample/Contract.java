@@ -30,6 +30,7 @@ public class Contract {
         makeFunction();
         standardSalary();
     }
+    public void setContractPrinter(ContractPrinter contractPrinter){ this.contractPrinter = contractPrinter;}
 
     public void makeFunction() {
         this.function = new Function();

@@ -14,7 +14,6 @@ public class Person {
     private Salary salary;
     private ApplicantInfo applicantInfo;
     private Contract contract;
-    private ContractPrinter contractPrinter;
 
 
     /*public Person(String firstName, String middleName, String lastName, String birthdate, String gender, String iban, String bsn, ApplicantInfo applicantInfo){
@@ -92,7 +91,7 @@ public class Person {
         }
     }
     public void printContract(){
-        contractPrinter = new ContractPrinter(contract);
+        contract.setContractPrinter(new ContractPrinter(contract));
     }
     public void determineContract(int choice, Person person){
         if(choice == 1){
