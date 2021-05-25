@@ -1,4 +1,6 @@
-package sample;
+package Contracts;
+
+import sample.Person;
 
 public class ContractDetermined extends Contract {
     private String endDate;

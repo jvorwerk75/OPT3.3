@@ -1,4 +1,6 @@
-package sample;
+package Contracts;
+
+import Contracts.Contract;
 
 public class ContractPrinter {
     private Contract contract;
