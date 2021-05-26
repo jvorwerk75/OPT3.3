@@ -1,6 +1,7 @@
 package Contracts;
 
 import Contracts.Contract;
+import sample.Login;
 
 public class ContractPrinter {
     private Contract contract;
@@ -11,7 +12,7 @@ public class ContractPrinter {
 
     public void printContract(){
         System.out.println("CONTRACT");
-        System.out.println(contract.makeBeginText());
+        System.out.println(makeBeginText());
         System.out.println("==============================");
         printFunction();
         System.out.println("==============================");
@@ -48,5 +49,8 @@ public class ContractPrinter {
         }else{
             System.out.println("De persoon heeft geen LBV nodig.");
         }
+    }
+    public String makeBeginText() {
+        return "Dit zijn de details van het contract voor " + contract.getPerson().getFullName() + ". \r\n==============================\r\nDit contract is aangemaakt door: " + Login.getInstance().getUsername();
     }
 }

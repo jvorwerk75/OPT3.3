@@ -86,9 +86,7 @@ public class Contract {
         }
     }
 
-    public String makeBeginText() {
-        return "Dit zijn de details van het contract voor " + person.getFullName() + ". \r\n==============================\r\nDit contract is aangemaakt door: " + Login.getInstance().getUsername();
-    }
+
     public Person getPerson(){return this.person;}
     public Integer getContractPercentage(){return this.contractPercentage;}
     public LBV getLbv(){return this.lbv;}
