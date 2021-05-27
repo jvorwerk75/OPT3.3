@@ -1,7 +1,6 @@
 package sample;
 
 import Contracts.*;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -87,7 +86,4 @@ public class Person {
             makeContract(person);
         }
     }
-
-
-
 }

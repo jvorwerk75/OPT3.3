@@ -1,7 +1,5 @@
 package sample;
 
-import java.util.Scanner;
-
 public class LBV {
     private Boolean needed;
 

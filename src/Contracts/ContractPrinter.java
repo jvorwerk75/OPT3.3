@@ -1,6 +1,5 @@
 package Contracts;
 
-import Contracts.Contract;
 import sample.Login;
 
 public class ContractPrinter {

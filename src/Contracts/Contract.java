@@ -1,7 +1,5 @@
 package Contracts;
-
 import sample.*;
-
 import java.util.Scanner;
 
 public class Contract {
@@ -85,8 +83,6 @@ public class Contract {
             LBV();
         }
     }
-
-
     public Person getPerson(){return this.person;}
     public Integer getContractPercentage(){return this.contractPercentage;}
     public LBV getLbv(){return this.lbv;}
