@@ -10,8 +10,10 @@ public class Login {
 
     private Login(){
         users = new ArrayList<> ();
-        users.add(new User ("a", "b"));
-        users.add(new User ("c", "d"));
+        User HRUser = new User("a", "b");
+        HRUser.makeHRWorker();
+        User recruitmentWorker = new User("c", "d");
+        recruitmentWorker.makeRecruitmentWorker();
         loggedInUser = null;
     }
 
