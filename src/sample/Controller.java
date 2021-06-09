@@ -5,10 +5,14 @@ import java.util.ArrayList;
 public class Controller {
     private ArrayList<ContractApplication> contractApplicationArrayList = new ArrayList<>();
     private ArrayList<Record> recordArrayList = new ArrayList<>();
+    private ArrayList<Person> personArrayList = new ArrayList<>();
 
     public Controller(){}
     public void addContractApplication(ContractApplication contractApplication){
         this.contractApplicationArrayList.add(contractApplication);
+    }
+    public void addPersonArrayList(Person person){
+        personArrayList.add(person);
     }
     public void addRecord(Record record){
         this.recordArrayList.add(record);
@@ -35,6 +39,9 @@ public class Controller {
             System.out.println("================================================================");
         }
     }
+    public ArrayList<Record> getRecordArrayList(){return recordArrayList;}
+    public ArrayList<Person> getPersonArrayList(){ return personArrayList;}
+    public ArrayList<ContractApplication> getContractApplicationArrayList(){return contractApplicationArrayList;}
     public void printRecords(){
         System.out.println("Records: ");
         for(int i = 0; i < recordArrayList.size(); i++){

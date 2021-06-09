@@ -10,19 +10,16 @@ public class Login {
 
     private Login(){
         users = new ArrayList<> ();
-        User HRUser = new User("a", "b");
-        HRUser.makeHRWorker();
-        User recruitmentWorker = new User("c", "d");
-        recruitmentWorker.makeRecruitmentWorker();
         loggedInUser = null;
     }
-
+    public User getLoggedInUser(){return loggedInUser;}
     public static Login getInstance(){
         if(singeleton == null){
             singeleton = new Login();
         }
         return singeleton;
     }
+    public ArrayList<User> getUsers(){ return this.users;}
     private Boolean userExists (String userName){
         for(int i = 0; i < users.size(); i++){
             if(users.get(i).getUserName().equals(userName)){

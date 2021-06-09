@@ -12,6 +12,8 @@ public class User {
         isHR = false;
         isRecruitment = false;
     }
+    public boolean getIsHr(){return this.isHR;}
+    public boolean getIsRecruitment(){return this.isRecruitment;}
     public String getUserName(){return this.userName;}
     public Boolean passwordAuthentication(String password){return password.equals(this.password);}
     public void makeHRWorker(){

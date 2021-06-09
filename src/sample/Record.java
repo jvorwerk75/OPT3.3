@@ -4,12 +4,13 @@ public class Record {
     private Person person;
     private Boolean complete;
     private Boolean correct;
+    private String contractSort;
 
-    public Record(Person person) {
+    public Record(Person person, String contractSort) {
         this.person = person;
         complete = completeRecordCheck();
         correct = syntaxCheck();
-
+        this.contractSort = contractSort;
     }
     //deze methode bepaald of er een contract aanvraag gedaan mag worden
     public Boolean makeContractApplication(){
@@ -62,5 +63,11 @@ public class Record {
         }
         return numbers;
     }
+    public void recordPrinter(){
+        System.out.println(person.getFullName());
+        System.out.println(person.getSalary().getFullSalary());
+        System.out.println(contractSort);
+    }
 }
+
 

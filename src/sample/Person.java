@@ -86,4 +86,11 @@ public class Person {
             makeContract(person);
         }
     }
+    public void printPersonInfo(){
+        System.out.println(getFullName());
+        System.out.println(getBirthdate());
+        System.out.println(getBsn());
+        System.out.println(getGender());
+        System.out.println(getIban());
+    }
 }
