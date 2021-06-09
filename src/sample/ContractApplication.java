@@ -16,6 +16,7 @@ public class ContractApplication {
             System.out.println("Er missen nog gegevens in de aanvraag.");
         }
     }
+    public Record getRecord(){return this.record;}
     public boolean recordCheck(){
         record.completeRecordCheck();
         if(record.getComplete()){
