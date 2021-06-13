@@ -27,6 +27,7 @@ public class Person {
         this.applicantInfo = applicantInfo;
 
     }
+    public ApplicantInfo getApplicantInfo(){return this.applicantInfo;}
     public Salary getSalary(){return this.salary;}
     public void setSalary(Salary salary){this.salary = salary;}
     public String getFullName(){return this.firstName + " " + this.middleName + " " + this.lastName;}

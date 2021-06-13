@@ -42,7 +42,7 @@ class RecordTest {
         //C
         assertTrue(record.getPerson().getIban().length() == 18);
         //D
-        assertFalse(record.makeContractApplication());
+        assertFalse(record.makeContractApplicationCheck());
     }
     @Test
     void conditionCoverage2(){
@@ -58,7 +58,7 @@ class RecordTest {
         //C
         assertFalse(record.getPerson().getIban().length() == 18);
         //D
-        assertFalse(record.makeContractApplication());
+        assertFalse(record.makeContractApplicationCheck());
     }
     @Test
     void conditionCoverage3(){
@@ -74,7 +74,7 @@ class RecordTest {
         //C
         assertFalse(record.getPerson().getIban().length() == 18);
         //D
-        assertFalse(record.makeContractApplication());
+        assertFalse(record.makeContractApplicationCheck());
     }
 
     //Decistion Coverage
@@ -94,7 +94,7 @@ class RecordTest {
         //C
         assertTrue(record.getPerson().getIban().length() == 18);
         //D
-        assertFalse(record.makeContractApplication());
+        assertFalse(record.makeContractApplicationCheck());
     }
     @Test
     void decisionCoverage2(){
@@ -110,7 +110,7 @@ class RecordTest {
         //C
         assertTrue(record.getPerson().getIban().length() == 18);
         //D
-        assertTrue(record.makeContractApplication());
+        assertTrue(record.makeContractApplicationCheck());
     }
 
     //Condition/Decision coverage
@@ -130,7 +130,7 @@ class RecordTest {
         //C
         assertFalse(record.getPerson().getIban().length() == 18);
         //D
-        assertFalse(record.makeContractApplication());
+        assertFalse(record.makeContractApplicationCheck());
     }
     @Test
     void conditionDecisionCoverage2(){
@@ -146,7 +146,7 @@ class RecordTest {
         //C
         assertTrue(record.getPerson().getIban().length() == 18);
         //D
-        assertTrue(record.makeContractApplication());
+        assertTrue(record.makeContractApplicationCheck());
     }
 
     //Modified condition/decision coverage
@@ -166,7 +166,7 @@ class RecordTest {
         //C
         assertTrue(record.getPerson().getIban().length() == 18);
         //D
-        assertTrue(record.makeContractApplication());
+        assertTrue(record.makeContractApplicationCheck());
     }
     @Test
     void modifiedConditionDecisionCoverage2(){
@@ -182,7 +182,7 @@ class RecordTest {
         //C
         assertTrue(record.getPerson().getIban().length() == 18);
         //D
-        assertFalse(record.makeContractApplication());
+        assertFalse(record.makeContractApplicationCheck());
     }
     @Test
     void modifiedConditionDecisionCoverage3(){
@@ -198,7 +198,7 @@ class RecordTest {
         //C
         assertTrue(record.getPerson().getIban().length() == 18);
         //D
-        assertFalse(record.makeContractApplication());
+        assertFalse(record.makeContractApplicationCheck());
     }
     @Test
     void modifiedConditionDecisionCoverage4(){
@@ -214,7 +214,7 @@ class RecordTest {
         //C
         assertFalse(record.getPerson().getIban().length() == 18);
         //D
-        assertFalse(record.makeContractApplication());
+        assertFalse(record.makeContractApplicationCheck());
     }
 
     //Multiple Condition Coverage
@@ -234,7 +234,7 @@ class RecordTest {
         //C
         assertFalse(record.getPerson().getIban().length() == 18);
         //D
-        assertFalse(record.makeContractApplication());
+        assertFalse(record.makeContractApplicationCheck());
     }
     @Test
     void multipleConditionCoverage2(){
@@ -250,7 +250,7 @@ class RecordTest {
         //C
         assertTrue(record.getPerson().getIban().length() == 18);
         //D
-        assertFalse(record.makeContractApplication());
+        assertFalse(record.makeContractApplicationCheck());
     }
     @Test
     void multipleConditionCoverage3(){
@@ -266,7 +266,7 @@ class RecordTest {
         //C
         assertFalse(record.getPerson().getIban().length() == 18);
         //D
-        assertFalse(record.makeContractApplication());
+        assertFalse(record.makeContractApplicationCheck());
     }
     @Test
     void multipleConditionCoverage4(){
@@ -282,7 +282,7 @@ class RecordTest {
         //C
         assertTrue(record.getPerson().getIban().length() == 18);
         //D
-        assertFalse(record.makeContractApplication());
+        assertFalse(record.makeContractApplicationCheck());
     }
     @Test
     void multipleConditionCoverage5(){
@@ -298,7 +298,7 @@ class RecordTest {
         //C
         assertFalse(record.getPerson().getIban().length() == 18);
         //D
-        assertFalse(record.makeContractApplication());
+        assertFalse(record.makeContractApplicationCheck());
     }
     @Test
     void multipleConditionCoverage6(){
@@ -314,7 +314,7 @@ class RecordTest {
         //C
         assertTrue(record.getPerson().getIban().length() == 18);
         //D
-        assertFalse(record.makeContractApplication());
+        assertFalse(record.makeContractApplicationCheck());
     }
     @Test
     void multipleConditionCoverage7(){
@@ -330,7 +330,7 @@ class RecordTest {
         //C
         assertFalse(record.getPerson().getIban().length() == 18);
         //D
-        assertFalse(record.makeContractApplication());
+        assertFalse(record.makeContractApplicationCheck());
     }
     @Test
     void multipleConditionCoverage8(){
@@ -346,7 +346,7 @@ class RecordTest {
         //C
         assertTrue(record.getPerson().getIban().length() == 18);
         //D
-        assertTrue(record.makeContractApplication());
+        assertTrue(record.makeContractApplicationCheck());
     }
 
     public Integer numberCount(String string){
