@@ -2,16 +2,15 @@ package Contracts;
 
 import sample.Person;
 
-public class ContractDetermined extends Contract {
+public class ContractDetermined extends EmployeeContract {
     private String endDate;
 
     public ContractDetermined(Person person){
         super(person);
-        endDate();
         startDate();
+        endDate();
         contractPercentage();
         probation();
-        LBV();
         makeFunction();
 
     }

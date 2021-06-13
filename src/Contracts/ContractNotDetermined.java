@@ -2,14 +2,13 @@ package Contracts;
 
 import sample.Person;
 
-public class ContractNotDetermined extends Contract {
+public class ContractNotDetermined extends EmployeeContract {
 
     public ContractNotDetermined(Person person){
         super(person);
         startDate();
         contractPercentage();
         probation();
-        LBV();
         makeFunction();
     }
 
