@@ -1,12 +1,14 @@
 package Contracts;
 
-import Contracts.Contract;
 import sample.Login;
+import sample.Salary;
 
 public class ContractPrinter {
     private Contract contract;
-    public ContractPrinter(Contract contract){
+    private Salary salary;
+    public ContractPrinter(Contract contract, Salary salary){
         this.contract = contract;
+        this.salary = salary;
         printContract();
     }
 
@@ -17,14 +19,18 @@ public class ContractPrinter {
         printFunction();
         System.out.println("==============================");
         System.out.println(contract.makeTimeConditions());
-        System.out.println("==============================");
-        printProbation();
+        if(contract.probation != null) {
+            System.out.println("==============================");
+            printProbation();
+        }
         System.out.println("==============================");
         printSalary();
         System.out.println("==============================");
         printContractPercentage();
         System.out.println("==============================");
         printLBV();
+        System.out.println("==============================");
+        printCar();
     }
     public void printFunction(){
         System.out.println("De persoon stap in de functie van: \r\n"+ contract.function.getFunctionName() );
@@ -38,16 +44,23 @@ public class ContractPrinter {
         }
     }
     public void printSalary(){
-        System.out.println("De persoon krijgt een salaris van: \r\n" + contract.getPerson().getSalary().getFullSalary());
+        System.out.println("De persoon krijgt een salaris van: \r\n" + salary.getFullSalary());
     }
     public void printContractPercentage(){
         System.out.println("De persoon gaat per week zoveel uren werken: \r\n" + contract.getContractPercentage());
     }
     public void printLBV(){
-        if(contract.getLbv().getNeeded()){
+        if(contract.getForms().getLbv()){
             System.out.println("De persoon heeft een LBV nodig.");
         }else{
             System.out.println("De persoon heeft geen LBV nodig.");
+        }
+    }
+    public void printCar(){
+        if(contract.getForms().getCar()){
+            System.out.println("De Persoon krijgt een auto van OGD.");
+        }else{
+            System.out.println("De Persoon hoeft geen auto van OGD.");
         }
     }
     public String makeBeginText() {

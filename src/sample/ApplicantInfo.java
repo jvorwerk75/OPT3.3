@@ -1,6 +1,5 @@
 package sample;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ApplicantInfo {
@@ -20,20 +19,8 @@ public class ApplicantInfo {
         this.goodMotivation = info.get(2);
         this.completedStudy = info.get(3);
     }
-
-    public void setYearsExperience(Integer yearsExperience){this.yearsExperience = yearsExperience;}
-    public void setOldOGDWorker(Boolean oldOGDWorker){this.oldOGDWorker = oldOGDWorker;}
-    public void setAcceptedOffer(Boolean acceptedOffer){this.acceptedOffer = acceptedOffer;}
-    public void setFulltime(Boolean fulltime){this.fulltime = fulltime;}
-    public void setGoodMotivation(Boolean goodMotivation){this.goodMotivation = goodMotivation;}
-    public void setCompletedStudy(Boolean completedStudy){this.completedStudy = completedStudy;}
     public Integer getYearsExperience(){return yearsExperience;}
-    public Boolean getOldOGDWorker(){return oldOGDWorker;}
-    public Boolean getAcceptedOffer(){return acceptedOffer;}
     public Boolean getFulltime(){return fulltime;}
-    public Boolean getGoodMotivation(){return goodMotivation;}
-    public Boolean getCompletedStudy(){return completedStudy;}
-
     public Boolean applicantSuitedForJob(){
         if(yearsExperience < 4 && yearsExperience > 0){
             return applicantExperienceCase1();

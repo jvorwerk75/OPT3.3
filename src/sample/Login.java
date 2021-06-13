@@ -10,26 +10,16 @@ public class Login {
 
     private Login(){
         users = new ArrayList<> ();
-        users.add(new User ("a", "b"));
-        users.add(new User ("c", "d"));
         loggedInUser = null;
     }
-
+    public User getLoggedInUser(){return loggedInUser;}
     public static Login getInstance(){
         if(singeleton == null){
             singeleton = new Login();
         }
         return singeleton;
     }
-    private Boolean userExists (String userName){
-        for(int i = 0; i < users.size(); i++){
-            if(users.get(i).getUserName().equals(userName)){
-                this.loggedInUser = users.get(i);
-                return true;
-            }
-        }
-        return false;
-    }
+    public ArrayList<User> getUsers(){ return this.users;}
     private User getUser(String email){
         for(User user: users){
             if(user.getUserName().equals(email)){
@@ -55,7 +45,6 @@ public class Login {
                 String email = scanner.nextLine();
                 System.out.println("Wat is het bijbehorden wachtwoord? ");
                 String password = scanner.nextLine();
-
                 User user = getUser(email);
 
                 if(user != null && user.passwordAuthentication(password)){

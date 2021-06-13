@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Logging {
+public class Logging extends Controller {
 
     private static Logging singleton;
     private File logFile;;
