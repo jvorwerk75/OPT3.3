@@ -32,27 +32,11 @@ public class Person {
     public void setSalary(Salary salary){this.salary = salary;}
     public String getFullName(){return this.firstName + " " + this.middleName + " " + this.lastName;}
     public String getFirstName(){return this.firstName;}
-    public String getMiddleName(){return this.middleName;}
     public String getLastName(){return this.lastName;}
     public String getBirthdate(){return this.birthdate;}
     public String getGender(){return this.gender;}
     public String getIban(){return this.iban;}
     public String getBsn(){return this.bsn;}
-
-    public Salary createSalary(){
-        Double amount;
-        if(applicantInfo.getYearsExperience() < 4){
-            amount = 2275.00;
-        }else if(applicantInfo.getYearsExperience() > 3 && applicantInfo.getYearsExperience() < 10){
-            amount = 2500.00;
-        }else if(applicantInfo.getYearsExperience() >= 10){
-            amount = 3000.00;
-        }else{
-            amount = null;
-        }
-        Salary salary = new Salary(applicantInfo.getFulltime(),amount);
-        return salary;
-    }
     public void makeContract(Person person){
         System.out.println("Weet u zeker dat u een contract wilt maken voor " + getFullName() + "? (j/n)");
         Scanner scanner = new Scanner(System.in);

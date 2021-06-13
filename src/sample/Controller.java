@@ -9,16 +9,9 @@ public class Controller {
     private ArrayList<ContractApplication> contractApplicationArrayList = new ArrayList<>();
     private ArrayList<Record> recordArrayList = new ArrayList<>();
     private ArrayList<Person> personArrayList = new ArrayList<>();
-    private ArrayList<Contract> contractArrayList = new ArrayList<>();
 
     public Controller(){}
-    public void addContractApplication(ContractApplication contractApplication){
-        this.contractApplicationArrayList.add(contractApplication);
-    }
-    public void addContract(Contract contract){
-        this.contractArrayList.add(contract);
-    }
-    public ArrayList<Contract> getContractArrayList(){return contractArrayList;}
+
     public void addPersonArrayList(Person person){
         personArrayList.add(person);
     }

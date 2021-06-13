@@ -20,15 +20,6 @@ public class Login {
         return singeleton;
     }
     public ArrayList<User> getUsers(){ return this.users;}
-    private Boolean userExists (String userName){
-        for(int i = 0; i < users.size(); i++){
-            if(users.get(i).getUserName().equals(userName)){
-                this.loggedInUser = users.get(i);
-                return true;
-            }
-        }
-        return false;
-    }
     private User getUser(String email){
         for(User user: users){
             if(user.getUserName().equals(email)){
@@ -54,7 +45,6 @@ public class Login {
                 String email = scanner.nextLine();
                 System.out.println("Wat is het bijbehorden wachtwoord? ");
                 String password = scanner.nextLine();
-
                 User user = getUser(email);
 
                 if(user != null && user.passwordAuthentication(password)){

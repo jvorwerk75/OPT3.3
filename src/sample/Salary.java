@@ -24,5 +24,4 @@ public class Salary {
             this.salarySort = "Per uur";
         }
     }
-    public void setAmount(Double amount){this.amount = amount;}
 }
