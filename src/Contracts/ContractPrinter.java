@@ -1,11 +1,14 @@
 package Contracts;
 
 import sample.Login;
+import sample.Salary;
 
 public class ContractPrinter {
     private Contract contract;
-    public ContractPrinter(Contract contract){
+    private Salary salary;
+    public ContractPrinter(Contract contract, Salary salary){
         this.contract = contract;
+        this.salary = salary;
         printContract();
     }
 
@@ -16,8 +19,10 @@ public class ContractPrinter {
         printFunction();
         System.out.println("==============================");
         System.out.println(contract.makeTimeConditions());
-        System.out.println("==============================");
-        printProbation();
+        if(contract.probation != null) {
+            System.out.println("==============================");
+            printProbation();
+        }
         System.out.println("==============================");
         printSalary();
         System.out.println("==============================");
@@ -37,7 +42,7 @@ public class ContractPrinter {
         }
     }
     public void printSalary(){
-        System.out.println("De persoon krijgt een salaris van: \r\n" + contract.getPerson().getSalary().getFullSalary());
+        System.out.println("De persoon krijgt een salaris van: \r\n" + salary.getFullSalary());
     }
     public void printContractPercentage(){
         System.out.println("De persoon gaat per week zoveel uren werken: \r\n" + contract.getContractPercentage());

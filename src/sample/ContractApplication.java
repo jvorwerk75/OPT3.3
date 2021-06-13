@@ -30,10 +30,6 @@ public class ContractApplication {
         }
     }
 
-    public void makeContract(){
-        record.getPerson().makeContract(record.getPerson());
-    }
-
     public Boolean salaryCheck(){
         if(this.salary.getSalarySort().isEmpty()){
             return false;
@@ -41,7 +37,8 @@ public class ContractApplication {
         if (this.salary.getAmount() == null) {
             return false;
         }
-        return false;
+        record.getPerson().setSalary(salary);
+        return true;
     }
     public Boolean contractApplicationControle(){
         if(personControle() && recordControle()){
@@ -70,7 +67,7 @@ public class ContractApplication {
     }
     private Boolean recordControle(){
         System.out.println("Deze contract aanvraag is gemaakt met de volgende record gegevens:");
-        record.recordPrinter();
+        recordPrinter();
         System.out.println("Kloppen deze gegevens? (j/n)");
         Scanner scanner2 = new Scanner(System.in);
         String antwoord = scanner2.nextLine();
@@ -85,5 +82,10 @@ public class ContractApplication {
             }
         }
         return false;
+    }
+    private void recordPrinter(){
+        System.out.println(record.getPerson().getFullName());
+        System.out.println(salary.getFullSalary());
+        System.out.println(record.getContractSort());
     }
 }

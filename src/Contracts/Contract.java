@@ -9,7 +9,6 @@ public class Contract {
     private LBV lbv;
     private Person person;
     protected Function function;
-    private ContractPrinter contractPrinter;
     Scanner scanner = new Scanner(System.in);
 
     public Contract(Person person) {
@@ -18,8 +17,8 @@ public class Contract {
 
     public void makePartTimeContractCondition() {
         startDate();
+        LBV();
         makeFunction();
-        standardSalary();
     }
 
     public void makeStandardContractConditions() {
@@ -28,9 +27,8 @@ public class Contract {
         probation();
         LBV();
         makeFunction();
-        standardSalary();
+
     }
-    public void setContractPrinter(ContractPrinter contractPrinter){ this.contractPrinter = contractPrinter;}
 
     public void makeFunction() {
         this.function = new Function();
@@ -53,22 +51,6 @@ public class Contract {
     public void startDate() {
         System.out.println("wanneer gaat de persoon beginnen? (dd/mm/yyyy)");
         this.startDate = scanner.nextLine();
-    }
-    public void standardSalary(){
-        System.out.println("Krijgt de persoon een standaard loon? (j/n)");
-        Scanner scanner1 = new Scanner(System.in);
-        String answer = scanner1.nextLine();
-        if(answer.equals("j")){
-            return;
-        }else if(answer.equals("n")){
-            System.out.println("Wat wordt het salaris dan? (XXXX,XX)");
-            Scanner scanner2 = new Scanner(System.in);
-            double amount = scanner2.nextDouble();
-            this.person.getSalary().setAmount(amount);
-        }else{
-            System.out.println("Je kan alleen met 'j' of 'n' reageren. \r\nProbeer het opnieuw.");
-            standardSalary();
-        }
     }
     public void LBV() {
         System.out.println("Wilt de persoon een LBV formulier? (j/n)");

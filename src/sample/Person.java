@@ -1,6 +1,8 @@
 package sample;
 
 import Contracts.*;
+
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,9 +14,9 @@ public class Person {
     private String gender;
     private String iban;
     private String bsn;
-    private Salary salary;
     private ApplicantInfo applicantInfo;
     private Contract contract;
+    private Salary salary;
     public Person(ArrayList<String> info, ApplicantInfo applicantInfo){
         this.firstName = info.get(0);
         this.middleName = info.get(1);
@@ -24,10 +26,10 @@ public class Person {
         this.iban = info.get(5);
         this.bsn = info.get(6);
         this.applicantInfo = applicantInfo;
-        this.salary = createSalary();
 
     }
-
+    public Salary getSalary(){return this.salary;}
+    public void setSalary(Salary salary){this.salary = salary;}
     public String getFullName(){return this.firstName + " " + this.middleName + " " + this.lastName;}
     public String getFirstName(){return this.firstName;}
     public String getMiddleName(){return this.middleName;}
@@ -36,7 +38,6 @@ public class Person {
     public String getGender(){return this.gender;}
     public String getIban(){return this.iban;}
     public String getBsn(){return this.bsn;}
-    public Salary getSalary(){return this.salary;}
 
     public Salary createSalary(){
         Double amount;
@@ -71,20 +72,21 @@ public class Person {
             makeContract(person);
         }
     }
-    public void printContract(){
-        contract.setContractPrinter(new ContractPrinter(contract));
-    }
     public void determineContract(int choice, Person person){
         if(choice == 1){
-            contract =  new ContractDetermined(person);
+            this.contract = new ContractDetermined(person);
         }else if(choice == 2){
-            contract = new ContractNotDetermined(person);
+            this.contract = new ContractNotDetermined(person);
         }else if(choice == 3){
-            contract = new ContractParttimer(person);
+            this.contract = new ContractParttimer(person);
         }else{
             System.out.println("probeer het opnieuw!");
             makeContract(person);
         }
+        printContract();
+    }
+    public void printContract(){
+        ContractPrinter contractPrinter = new ContractPrinter(this.contract, this.salary);
     }
     public void printPersonInfo(){
         System.out.println(getFullName());

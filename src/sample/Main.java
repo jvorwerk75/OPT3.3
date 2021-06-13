@@ -40,16 +40,14 @@ public class Main extends Application {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wilt u een contract maken? (j/n)");
         String antwoord = scanner.nextLine();
-        Boolean answerControle = true;
-        while(answerControle){
-            if(antwoord.equals("j")){
-                contractApplication.getRecord().getPerson().makeContract(contractApplication.getRecord().getPerson());
-            }else if(antwoord.equals("n")){
-                System.out.println("Varwel");
-            }else{
-                System.out.println("Je kan aleen met j en n antwoorden. Probeer het nog eens.");
-            }
+        if(antwoord.equals("j")){
+            contractApplication.completeCheck();
+        }else if(antwoord.equals("n")){
+            System.out.println("Varwel");
+        }else{
+            System.out.println("Je kan aleen met j en n antwoorden. Probeer het nog eens.");
         }
+
     }
     private void makeDummyRecord(Controller controller){
         ArrayList<Boolean>  applicationInfoList = new ArrayList<>();

@@ -63,11 +63,7 @@ public class Record {
         }
         return numbers;
     }
-    public void recordPrinter(){
-        System.out.println(person.getFullName());
-        System.out.println(person.getSalary().getFullSalary());
-        System.out.println(contractSort);
-    }
+    public String getContractSort(){return this.contractSort;}
 }
 
 
