@@ -9,35 +9,14 @@ public class Controller {
     private ArrayList<ContractApplication> contractApplicationArrayList = new ArrayList<>();
     private ArrayList<Record> recordArrayList = new ArrayList<>();
     private ArrayList<Person> personArrayList = new ArrayList<>();
-    private ArrayList<Contract> contractArrayList = new ArrayList<>();
 
     public Controller(){}
-    public void addContractApplication(ContractApplication contractApplication){
-        this.contractApplicationArrayList.add(contractApplication);
-    }
-    public void addContract(Contract contract){
-        this.contractArrayList.add(contract);
-    }
-    public ArrayList<Contract> getContractArrayList(){return contractArrayList;}
+    public void addContractApplication(ContractApplication contractApplication){contractApplicationArrayList.add(contractApplication);}
     public void addPersonArrayList(Person person){
         personArrayList.add(person);
     }
     public void addRecord(Record record){
         this.recordArrayList.add(record);
-    }
-    public void deleteContractApplication(ContractApplication contractApplication){
-        for(int i = 0; i < contractApplicationArrayList.size(); i++){
-            if(contractApplication.getRecord().getPerson().getBsn().equals(contractApplicationArrayList.get(i).getRecord().getPerson().getBsn())){
-                contractApplicationArrayList.remove(i);
-            }
-        }
-    }
-    public void deleteRecord(Record record){
-        for(int i = 0; i < recordArrayList.size(); i++){
-            if(record.getPerson().getBsn().equals(recordArrayList.get(i).getPerson().getBsn())){
-                recordArrayList.remove(i);
-            }
-        }
     }
     public void printContractApplications(){
         System.out.println("Contract aanvragen: ");

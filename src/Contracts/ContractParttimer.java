@@ -2,11 +2,12 @@ package Contracts;
 
 import sample.Person;
 
-public class ContractParttimer extends Contract {
+public class ContractParttimer extends EmployeeContract {
 
     public ContractParttimer(Person person){
         super(person);
-        makePartTimeContractCondition();
+        startDate();
+        makeFunction();
 
     }
     public String makeTimeConditions(){

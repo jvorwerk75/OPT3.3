@@ -22,7 +22,9 @@ public class Main extends Application {
                     contractMaker(contractApplication);
                 }
             }else if(Login.getInstance().getLoggedInUser().getIsRecruitment()){
-
+                Record record = recordChoser(controller);
+                ContractApplication contractApplication =  record.makeContractApplication(record);
+                controller.addContractApplication(contractApplication);
             }
 
         }
@@ -30,7 +32,7 @@ public class Main extends Application {
     }
     private void makeDubbyUsers(){
         User HRuser = new User("a", "b");
-        User RecruitmentUser = new User("a", "b");
+        User RecruitmentUser = new User("c", "d");
         HRuser.makeHRWorker();
         RecruitmentUser.makeRecruitmentWorker();
         Login.getInstance().getUsers().add(HRuser);
@@ -99,6 +101,21 @@ public class Main extends Application {
                 return controller.getContractApplicationArrayList().get(antwoord);
             }else{
                 System.out.println("Deze contract aanvraag bestaat niet. Probeer het nog eens");
+            }
+        }
+        return null;
+    }
+    private Record recordChoser(Controller controller){
+        controller.printRecords();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welke record wilt u gebruiken voor de contractaanvraag? ");
+        int antwoord = scanner.nextInt() -1;
+        Boolean answerCheck = true;
+        while(answerCheck){
+            if (antwoord < controller.getRecordArrayList().size()){
+                return controller.getRecordArrayList().get(antwoord);
+            }else{
+                System.out.println("Deze record aanvraag bestaat niet. Probeerd het nog eens");
             }
         }
         return null;
