@@ -6,7 +6,9 @@ public class ContractParttimer extends Contract {
 
     public ContractParttimer(Person person){
         super(person);
-        makePartTimeContractCondition();
+        startDate();
+        LBV();
+        makeFunction();
 
     }
     public String makeTimeConditions(){

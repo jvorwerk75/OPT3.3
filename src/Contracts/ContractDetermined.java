@@ -8,7 +8,11 @@ public class ContractDetermined extends Contract {
     public ContractDetermined(Person person){
         super(person);
         endDate();
-        makeStandardContractConditions();
+        startDate();
+        contractPercentage();
+        probation();
+        LBV();
+        makeFunction();
 
     }
     public void endDate(){

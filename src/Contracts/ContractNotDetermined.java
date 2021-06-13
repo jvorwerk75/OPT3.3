@@ -6,7 +6,11 @@ public class ContractNotDetermined extends Contract {
 
     public ContractNotDetermined(Person person){
         super(person);
-        makeStandardContractConditions();
+        startDate();
+        contractPercentage();
+        probation();
+        LBV();
+        makeFunction();
     }
 
     public String makeTimeConditions(){
