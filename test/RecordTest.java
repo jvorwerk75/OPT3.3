@@ -34,7 +34,7 @@ class RecordTest {
         this.bsn = "12345678";
         addToArray();
         Person person = new Person(info1, null);
-        Record record = new Record(person);
+        Record record = new Record(person, "");
         //A
         assertFalse(numberCount(record.getPerson().getBsn()) == 9);
         //B
@@ -50,7 +50,7 @@ class RecordTest {
         this.bsn = "12345678";
         addToArray();
         Person person = new Person(info1, null);
-        Record record = new Record(person);
+        Record record = new Record(person, "");
         //A
         assertFalse(numberCount(record.getPerson().getBsn()) == 9);
         //B
@@ -66,7 +66,7 @@ class RecordTest {
         this.bsn = "123456789";
         addToArray();
         Person person = new Person(info1, null);
-        Record record = new Record(person);
+        Record record = new Record(person, "");
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
         //B
@@ -86,7 +86,7 @@ class RecordTest {
         this.bsn = "123456789";
         addToArray();
         Person person = new Person(info1, null);
-        Record record = new Record(person);
+        Record record = new Record(person, "");
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
         //B
@@ -102,7 +102,7 @@ class RecordTest {
         this.bsn = "123456789";
         addToArray();
         Person person = new Person(info1, null);
-        Record record = new Record(person);
+        Record record = new Record(person, "");
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
         //B
@@ -122,7 +122,7 @@ class RecordTest {
         this.bsn = "12345678";
         addToArray();
         Person person = new Person(info1, null);
-        Record record = new Record(person);
+        Record record = new Record(person, "");
         //A
         assertFalse(numberCount(record.getPerson().getBsn()) == 9);
         //B
@@ -138,7 +138,7 @@ class RecordTest {
         this.bsn = "123456789";
         addToArray();
         Person person = new Person(info1, null);
-        Record record = new Record(person);
+        Record record = new Record(person, "");
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
         //B
@@ -158,7 +158,7 @@ class RecordTest {
         this.bsn = "123456789";
         addToArray();
         Person person = new Person(info1, null);
-        Record record = new Record(person);
+        Record record = new Record(person, "");
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
         //B
@@ -174,7 +174,7 @@ class RecordTest {
         this.bsn = "12345678";
         addToArray();
         Person person = new Person(info1, null);
-        Record record = new Record(person);
+        Record record = new Record(person, "");
         //A
         assertFalse(numberCount(record.getPerson().getBsn()) == 9);
         //B
@@ -190,7 +190,7 @@ class RecordTest {
         this.bsn = "123456789";
         addToArray();
         Person person = new Person(info1, null);
-        Record record = new Record(person);
+        Record record = new Record(person, "");
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
         //B
@@ -206,7 +206,7 @@ class RecordTest {
         this.bsn = "123456789";
         addToArray();
         Person person = new Person(info1, null);
-        Record record = new Record(person);
+        Record record = new Record(person, "");
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
         //B
@@ -226,7 +226,7 @@ class RecordTest {
         this.bsn = "12345678";
         addToArray();
         Person person = new Person(info1, null);
-        Record record = new Record(person);
+        Record record = new Record(person, "");
         //A
         assertFalse(numberCount(record.getPerson().getBsn()) == 9);
         //B
@@ -242,7 +242,7 @@ class RecordTest {
         this.bsn = "12345678";
         addToArray();
         Person person = new Person(info1, null);
-        Record record = new Record(person);
+        Record record = new Record(person, "");
         //A
         assertFalse(numberCount(record.getPerson().getBsn()) == 9);
         //B
@@ -258,7 +258,7 @@ class RecordTest {
         this.bsn = "12345678";
         addToArray();
         Person person = new Person(info1, null);
-        Record record = new Record(person);
+        Record record = new Record(person, "");
         //A
         assertFalse(numberCount(record.getPerson().getBsn()) == 9);
         //B
@@ -274,7 +274,7 @@ class RecordTest {
         this.bsn = "12345678";
         addToArray();
         Person person = new Person(info1, null);
-        Record record = new Record(person);
+        Record record = new Record(person, "");
         //A
         assertFalse(numberCount(record.getPerson().getBsn()) == 9);
         //B
@@ -290,7 +290,7 @@ class RecordTest {
         this.bsn = "123456789";
         addToArray();
         Person person = new Person(info1, null);
-        Record record = new Record(person);
+        Record record = new Record(person, "");
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
         //B
@@ -306,7 +306,7 @@ class RecordTest {
         this.bsn = "123456789";
         addToArray();
         Person person = new Person(info1, null);
-        Record record = new Record(person);
+        Record record = new Record(person, "");
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
         //B
@@ -322,7 +322,7 @@ class RecordTest {
         this.bsn = "123456789";
         addToArray();
         Person person = new Person(info1, null);
-        Record record = new Record(person);
+        Record record = new Record(person, "");
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
         //B
@@ -338,7 +338,7 @@ class RecordTest {
         this.bsn = "123456789";
         addToArray();
         Person person = new Person(info1, null);
-        Record record = new Record(person);
+        Record record = new Record(person, "");
         //A
         assertTrue(numberCount(record.getPerson().getBsn()) == 9);
         //B
