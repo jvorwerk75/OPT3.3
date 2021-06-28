@@ -28,7 +28,7 @@ public class Function {
             administrationFunction();
         }
         else if(antwoord == 6){
-            otherFunction();
+            overigFunction();
         }
         else if(antwoord == 7){
             parttimeFunction();
@@ -47,7 +47,7 @@ public class Function {
     public void salesFunction(){
         this.functionName = "Sales medewerker";
     }
-    public void otherFunction(){
+    public void overigFunction(){
         Scanner scanner2 = new Scanner(System.in);
         System.out.println("Hoe heet de functie die de persoon gaat krijgen? ");
         this.functionName = scanner2.nextLine();

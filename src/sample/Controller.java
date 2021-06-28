@@ -1,8 +1,5 @@
 package sample;
 
-import Contracts.Contract;
-import com.sun.source.tree.ArrayAccessTree;
-
 import java.util.ArrayList;
 
 public class Controller {
@@ -27,7 +24,6 @@ public class Controller {
         }
     }
     public ArrayList<Record> getRecordArrayList(){return recordArrayList;}
-    public ArrayList<Person> getPersonArrayList(){ return personArrayList;}
     public ArrayList<ContractApplication> getContractApplicationArrayList(){return contractApplicationArrayList;}
     public void printRecords(){
         System.out.println("Records: ");

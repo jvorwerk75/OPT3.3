@@ -8,9 +8,6 @@ public class ApplicantInfo {
     private Boolean goodMotivation;
     private Boolean completedStudy;
     private Boolean fulltime;
-
-
-
     public ApplicantInfo(Integer yearsExperience, ArrayList<Boolean> info){
         this.yearsExperience = yearsExperience;
         this.oldOGDWorker = info.get(0);

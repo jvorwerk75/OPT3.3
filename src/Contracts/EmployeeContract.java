@@ -32,5 +32,4 @@ public class EmployeeContract extends Contract{
     public String makeTimeConditions() {
         return "";
     }
-
 }

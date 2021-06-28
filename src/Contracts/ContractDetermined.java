@@ -1,10 +1,8 @@
 package Contracts;
-
 import sample.Person;
 
 public class ContractDetermined extends EmployeeContract {
     private String endDate;
-
     public ContractDetermined(Person person){
         super(person);
         startDate();
@@ -21,6 +19,4 @@ public class ContractDetermined extends EmployeeContract {
     public String makeTimeConditions(){
         return "Startdatum nieuwe medewerker: \r\n" + startDate + "\r\nEinddatum nieuwe medewerker:\r\n" + endDate;
     }
-
-
 }
