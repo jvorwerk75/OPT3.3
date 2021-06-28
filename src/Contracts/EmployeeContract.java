@@ -7,10 +7,12 @@ import java.util.Scanner;
 
 public class EmployeeContract extends Contract{
     Scanner scanner = new Scanner(System.in);
+    protected Forms forms;
     public EmployeeContract(Person person){
         this.forms = new Forms();
         setPerson(person);
     }
+    public Forms getForms(){return this.forms;}
     public void contractPercentage() {
         System.out.println("Hoeveel uur gaat de persoon werken per week? (24 t/m 40)");
         this.contractPercentage = scanner.nextInt();

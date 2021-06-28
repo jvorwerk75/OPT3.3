@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class ApplicantInfo {
     private Integer yearsExperience;
     private Boolean oldOGDWorker;
-    private Boolean acceptedOffer = false;
     private Boolean goodMotivation;
     private Boolean completedStudy;
     private Boolean fulltime;
@@ -19,7 +18,6 @@ public class ApplicantInfo {
         this.goodMotivation = info.get(2);
         this.completedStudy = info.get(3);
     }
-    public Integer getYearsExperience(){return yearsExperience;}
     public Boolean getFulltime(){return fulltime;}
     public Boolean applicantSuitedForJob(){
         if(yearsExperience < 4 && yearsExperience > 0){
