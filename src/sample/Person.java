@@ -58,7 +58,7 @@ public class Person {
     }
 
     public void printContract(){
-        ContractPrinter contractPrinter = new ContractPrinter(this.employeeContract, this.salary);
+        ContractPrinter contractPrinter = new ContractPrinter(this.employeeContract);
     }
     public void printPersonInfo(){
         System.out.println(getFullName());
