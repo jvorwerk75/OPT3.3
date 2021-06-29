@@ -1,42 +1,30 @@
 package sample;
 
 import Contracts.*;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Person {
-    private String firstName;
-    private String lastName;
-    private String middleName;
-    private String birthdate;
-    private String gender;
-    private String iban;
-    private String bsn;
+
     private ApplicantInfo applicantInfo;
     private EmployeeContract employeeContract;
     private Salary salary;
+    private PersonInfo personInfo;
     public Person(ArrayList<String> info, ApplicantInfo applicantInfo){
-        this.firstName = info.get(0);
-        this.middleName = info.get(1);
-        this.lastName = info.get(2);
-        this.birthdate = info.get(3);
-        this.gender = info.get(4);
-        this.iban = info.get(5);
-        this.bsn = info.get(6);
+        this.personInfo = new PersonInfo(info);
         this.applicantInfo = applicantInfo;
 
     }
     public ApplicantInfo getApplicantInfo(){return this.applicantInfo;}
     public Salary getSalary(){return this.salary;}
     public void setSalary(Salary salary){this.salary = salary;}
-    public String getFullName(){return this.firstName + " " + this.middleName + " " + this.lastName;}
-    public String getFirstName(){return this.firstName;}
-    public String getLastName(){return this.lastName;}
-    public String getBirthdate(){return this.birthdate;}
-    public String getGender(){return this.gender;}
-    public String getIban(){return this.iban;}
-    public String getBsn(){return this.bsn;}
+    public String getFullName(){return personInfo.getFirstName() + " " + personInfo.getMiddleName() + " " + personInfo.getLastName();}
+    public String getFirstName(){return personInfo.getFirstName();}
+    public String getLastName(){return personInfo.getLastName();}
+    public String getBirthdate(){return personInfo.getBirthdate();}
+    public String getGender(){return personInfo.getGender();}
+    public String getIban(){return personInfo.getIban();}
+    public String getBsn(){return personInfo.getBsn();}
     public void makeContract(Person person) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Weet u zeker dat u een contract wilt maken voor " + getFullName() + "? (j/n)");
@@ -56,7 +44,7 @@ public class Person {
             makeContract(person);
         }
     }
-    public void determineContract(int choice, Person person){
+    private void determineContract(int choice, Person person){
         if(choice ==1){
             this.employeeContract = new ContractDetermined(person);
         }else if(choice == 2){

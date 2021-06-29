@@ -15,6 +15,4 @@ public class Contract {
     public void setPerson(Person person){this.person = person;}
     public Forms getForms(){return this.forms;}
     public Person getPerson(){return this.person;}
-    public void setForms(Forms forms){this.forms = forms;}
-
 }

@@ -13,10 +13,10 @@ public class Function {
         System.out.println("Wat wordt de naam van de functie? (ICT=1/Account manager=2/HR medewerker=3/sales=4/Administratief medewerker=5/overig=6/parttimer=7)");
         int antwoord = scanner.nextInt();
         if(antwoord == 1){
-            ICTfunction();
+            ICTFunction();
         }
         else if(antwoord == 2){
-            AMfunction();
+            AMFunction();
         }
         else if(antwoord == 3){
             HRFunction();
@@ -34,10 +34,8 @@ public class Function {
             parttimeFunction();
         }
     }
-    public void ICTfunction(){
-        this.functionName = "ICT-Medewerker";
-    }
-    public void AMfunction(){
+    public void ICTFunction(){this.functionName = "ICT-Medewerker"; }
+    public void AMFunction(){
         this.functionName = "Account Manager";
     }
     public void HRFunction(){
@@ -50,8 +48,9 @@ public class Function {
         this.functionName = "Sales medewerker";
     }
     public void overigFunction(){
+        Scanner scanner2 = new Scanner(System.in);
         System.out.println("Hoe heet de functie die de persoon gaat krijgen? ");
-        this.functionName = scanner.nextLine();
+        this.functionName = scanner2.nextLine();
     }
     public void parttimeFunction(){
         this.functionName = "Part-timer";

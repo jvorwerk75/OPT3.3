@@ -1,6 +1,4 @@
 package sample;
-
-import Contracts.Contract;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

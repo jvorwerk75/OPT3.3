@@ -48,37 +48,19 @@ public class Record {
     public Person getPerson(){return this.person;}
     public Boolean getComplete(){return this.complete;}
     //check persoongegevens compleet zijn. Hierin zijn niet vereiste attributen weggelaten
-    public Boolean completeRecordCheck() {
-        if (person.getBirthdate().isEmpty()) {
-            return false;
-        }
-        if (person.getGender().isEmpty()) {
-            return false;
-        }
-        if (person.getIban().isEmpty()) {
-            return false;
-        }
-        if (person.getFirstName().isEmpty()) {
-            return false;
-        }
-        if (person.getLastName().isEmpty()) {
+    private Boolean completeRecordCheck() {
+        if (person.getBirthdate().isEmpty() ||person.getGender().isEmpty() || person.getIban().isEmpty()|| person.getFirstName().isEmpty()||person.getLastName().isEmpty() ) {
             return false;
         }
         return true;
     }
-    public Boolean syntaxCheck(){
-        if(this.person.getBsn().length() != 9){
-            return false;
-        }
-        if(countIbanNumbers(this.person.getIban()) != 12){
-            return false;
-        }
-        if(this.person.getIban().length() != 18){
+    private Boolean syntaxCheck(){
+        if(this.person.getBsn().length() != 9 || countIbanNumbers(this.person.getIban()) != 12 || this.person.getIban().length() != 18 ){
             return false;
         }
         return true;
     }
-    public Integer countIbanNumbers(String iban){
+    private Integer countIbanNumbers(String iban){
         char[] ch = iban.toCharArray();
         Integer numbers = 0;
         for(int i = 0; i < iban.length(); i++){
