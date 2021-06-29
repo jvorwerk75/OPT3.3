@@ -19,7 +19,6 @@ class ApplicantInfoTest {
         }
     }
 
-    // application(0) = oldOGDWorker, application(1) = fulltime, application(2) = goodMotivation, application(3) = CompletedStudy
 
     @Test
     void pairwiseTestCase1(){

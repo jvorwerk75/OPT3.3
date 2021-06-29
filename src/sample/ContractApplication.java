@@ -50,28 +50,24 @@ public class ContractApplication {
         System.out.println("Deze contract aanvraag is gemaakt voor de volgende sollicatant: ");
         record.getPerson().printPersonInfo();
         System.out.println("Kloppen deze gegevens? (j/n)");
-        Scanner scanner  = new Scanner(System.in);
-        String antwoord = scanner.nextLine();
-        Boolean controle = true;
-        while(controle){
-            if(antwoord.equals("j")){
-                return true;
-            }else if(antwoord.equals("n")){
-                return false;
-            }else{
-                System.out.println("Je kan alleen met j of n antwoorden. Probeer het nog eens!");
-            }
-        }
-        return false;
+        return getAnswer();
     }
     private Boolean recordControle(){
         System.out.println("Deze contract aanvraag is gemaakt met de volgende record gegevens:");
         contractApplicationPrinter();
         System.out.println("Kloppen deze gegevens? (j/n)");
-        Scanner scanner2 = new Scanner(System.in);
-        String antwoord = scanner2.nextLine();
+        return getAnswer();
+    }
+    private void contractApplicationPrinter(){
+        System.out.println(record.getPerson().getFullName());
+        System.out.println(salary.getFullSalary());
+        System.out.println(record.getContractSort());
+    }
+    private Boolean getAnswer(){
         Boolean controle = true;
         while(controle){
+            Scanner scanner2 = new Scanner(System.in);
+            String antwoord = scanner2.nextLine();
             if(antwoord.equals("j")){
                 return true;
             }else if(antwoord.equals("n")){
@@ -81,10 +77,5 @@ public class ContractApplication {
             }
         }
         return false;
-    }
-    private void contractApplicationPrinter(){
-        System.out.println(record.getPerson().getFullName());
-        System.out.println(salary.getFullSalary());
-        System.out.println(record.getContractSort());
     }
 }
