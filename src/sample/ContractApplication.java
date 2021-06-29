@@ -50,20 +50,20 @@ public class ContractApplication {
         System.out.println("Deze contract aanvraag is gemaakt voor de volgende sollicatant: ");
         record.getPerson().printPersonInfo();
         System.out.println("Kloppen deze gegevens? (j/n)");
-        return getAntwoord();
+        return getAnswer();
     }
     private Boolean recordControle(){
         System.out.println("Deze contract aanvraag is gemaakt met de volgende record gegevens:");
         contractApplicationPrinter();
         System.out.println("Kloppen deze gegevens? (j/n)");
-        return getAntwoord();
+        return getAnswer();
     }
     private void contractApplicationPrinter(){
         System.out.println(record.getPerson().getFullName());
         System.out.println(salary.getFullSalary());
         System.out.println(record.getContractSort());
     }
-    private Boolean getAntwoord(){
+    private Boolean getAnswer(){
         Boolean controle = true;
         while(controle){
             Scanner scanner2 = new Scanner(System.in);
