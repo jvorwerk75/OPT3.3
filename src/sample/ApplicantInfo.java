@@ -25,7 +25,7 @@ public class ApplicantInfo {
             return applicantExperienceCase3();
         }
     }
-    public Boolean applicantExperienceCase1(){
+    private Boolean applicantExperienceCase1(){
         if(goodMotivation){
             if(completedStudy){
                 return true;
@@ -48,13 +48,13 @@ public class ApplicantInfo {
             }
         }
     }
-    public Boolean applicantExperienceCase2(){
+    private Boolean applicantExperienceCase2(){
         if(completedStudy || oldOGDWorker){
             return true;
         }
             return false;
     }
-    public Boolean applicantExperienceCase3(){
+    private Boolean applicantExperienceCase3(){
         if(completedStudy || oldOGDWorker || goodMotivation){
             return true;
         }else{

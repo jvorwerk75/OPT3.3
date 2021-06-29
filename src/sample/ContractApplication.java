@@ -20,8 +20,7 @@ public class ContractApplication {
     }
     public Record getRecord(){return this.record;}
     public Boolean recordCheck(){
-        record.completeRecordCheck();
-        if(record.getComplete()){
+        if(record.makeContractApplicationCheck()){
             return true;
         }
         else{

@@ -5,11 +5,9 @@ public class ContractDetermined extends EmployeeContract {
     private String endDate;
     public ContractDetermined(Person person){
         super(person);
-        startDate();
         endDate();
         contractPercentage();
         probation();
-        makeFunction();
 
     }
     public void endDate(){

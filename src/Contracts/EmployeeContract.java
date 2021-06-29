@@ -10,6 +10,8 @@ public class EmployeeContract extends Contract{
     protected Forms forms;
     public EmployeeContract(Person person){
         this.forms = new Forms();
+        startDate();
+        makeFunction();
         setPerson(person);
     }
     public Forms getForms(){return this.forms;}
