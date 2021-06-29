@@ -5,13 +5,9 @@ import java.util.ArrayList;
 public class ApplicantInfo {
     private Integer yearsExperience;
     private Boolean oldOGDWorker;
-    private Boolean acceptedOffer = false;
     private Boolean goodMotivation;
     private Boolean completedStudy;
     private Boolean fulltime;
-
-
-
     public ApplicantInfo(Integer yearsExperience, ArrayList<Boolean> info){
         this.yearsExperience = yearsExperience;
         this.oldOGDWorker = info.get(0);
@@ -19,7 +15,6 @@ public class ApplicantInfo {
         this.goodMotivation = info.get(2);
         this.completedStudy = info.get(3);
     }
-    public Integer getYearsExperience(){return yearsExperience;}
     public Boolean getFulltime(){return fulltime;}
     public Boolean applicantSuitedForJob(){
         if(yearsExperience < 4 && yearsExperience > 0){
@@ -30,7 +25,7 @@ public class ApplicantInfo {
             return applicantExperienceCase3();
         }
     }
-    public Boolean applicantExperienceCase1(){
+    private Boolean applicantExperienceCase1(){
         if(goodMotivation){
             if(completedStudy){
                 return true;
@@ -53,13 +48,13 @@ public class ApplicantInfo {
             }
         }
     }
-    public Boolean applicantExperienceCase2(){
+    private Boolean applicantExperienceCase2(){
         if(completedStudy || oldOGDWorker){
             return true;
         }
             return false;
     }
-    public Boolean applicantExperienceCase3(){
+    private Boolean applicantExperienceCase3(){
         if(completedStudy || oldOGDWorker || goodMotivation){
             return true;
         }else{
