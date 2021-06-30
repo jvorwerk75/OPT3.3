@@ -3,7 +3,7 @@ package Contracts;
 import java.util.Scanner;
 
 public class LBV {
-    private Boolean needed;
+    private Boolean lbvNeeded;
     public LBV(){
         LBVNeeded();
     }
@@ -12,13 +12,13 @@ public class LBV {
         Scanner scanner2 = new Scanner(System.in);
         String answer = scanner2.nextLine();
         if (answer.equals("j")) {
-            this.needed = true;
+            this.lbvNeeded = true;
         } else if (answer.equals("n")) {
-            this.needed = false;
+            this.lbvNeeded = false;
         } else {
             System.out.println("U kunt alleen met 'j' of 'n' antwoorden. \r\n Probeer het nog eens! ");
             LBVNeeded();
         }
     }
-    public Boolean getNeeded(){return needed;}
+    public Boolean getNeeded(){return lbvNeeded;}
 }
