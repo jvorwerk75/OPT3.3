@@ -47,14 +47,14 @@ public class ContractPrinter {
         System.out.println("De persoon gaat per week zoveel uren werken: \r\n" + contract.getContractPercentage());
     }
     private void printLBV(){
-        if(contract.getForms().getLbv()){
+        if(contract.getForms().getLbv().getNeeded()){
             System.out.println("De persoon heeft een LBV nodig.");
         }else{
             System.out.println("De persoon heeft geen LBV nodig.");
         }
     }
     private void printCar(){
-        if(contract.getForms().getCar()){
+        if(contract.getForms().getCar().getNeeded()){
             System.out.println("De Persoon krijgt een auto van OGD.");
         }else{
             System.out.println("De Persoon hoeft geen auto van OGD.");
